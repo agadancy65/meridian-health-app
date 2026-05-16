@@ -22,7 +22,7 @@ jobs:
           path: ./
           base: ${{ github.event.before }}
           head: ${{ github.sha }}
-          extra_args: --only-verified=false
+          extra_args: --only-verified
 
       - name: Set up Python
         uses: actions/setup-python@v4
