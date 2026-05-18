@@ -22,6 +22,12 @@ jobs:
           path: ./
           extra_args: --only-verified
 
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Bandit SAST Scanning
+        run: bandit -r app/ -f json -o bandit-report.json || true && bandit -r app/
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
