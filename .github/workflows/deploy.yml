@@ -20,6 +20,8 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
+          base: ""
+          head: HEAD
 
       - name: Install Bandit
         run: pip install bandit
