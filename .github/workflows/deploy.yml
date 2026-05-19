@@ -22,7 +22,6 @@ jobs:
           path: ./
           base: ""
           head: HEAD
-          extra_args: --include-detectors=all
 
       - name: Install Bandit
         run: pip install bandit
