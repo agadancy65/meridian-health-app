@@ -29,6 +29,12 @@ jobs:
       - name: Bandit SAST Scanning
         run: bandit -r app/ -f json -o bandit-report.json || true && bandit -r app/
 
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: pip-audit Dependency Scanning
+        run: pip-audit -r app/requirements.txt
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
