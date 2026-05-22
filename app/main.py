@@ -43,7 +43,7 @@ app.add_middleware(
 # ── SECURITY ISSUE 1: Hardcoded credential (Bandit B105) ─────────────────────
 # This is what TruffleHog and Bandit will flag.
 # In production, use: os.environ.get("DEBUG_PASSWORD")
-DEBUG_PASSWORD = os.environ.get("DEBUG_PASSWORD", "")  # noqa: S105 — Bandit will catch this
+DEBUG_PASSWORD = "admin123"  # noqa: S105 — Bandit will catch this
 
 # ── In-memory data store (no database for simplicity) ─────────────────────────
 patients_db: dict = {
